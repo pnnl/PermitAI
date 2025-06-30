@@ -2,7 +2,7 @@
 
 This GitHub repo contains works under the PermitAI project that have been approved for public release. Please see corresponding subfolders for relevant work.
 
-1. **[/evaluation](https://github.com/pnnl/permitai/evaluation):** Multi-context Assessment Pipeline for Language model Evaluation (MAPLE) v1.0
+1. **[/evaluation](https://github.com/pnnl/PermitAI/tree/master/evaluation):** Multi-context Assessment Pipeline for Language model Evaluation (MAPLE) v1.0
 
 ## About PermitAI
 
