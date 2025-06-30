@@ -1,0 +1,21 @@
+log_file: "logs/plot_generator.log"
+metric: "answer_correctness"
+path_pfx: "results/model"
+percentage: True
+single_context:
+  context_type: "gold"
+  outputs:
+    barplot: "plots/barplot-compare"
+    heatmap: "plots/heatmap-compare"
+  plot_args:
+    width: 10
+    height: 6
+    xtickrotation: 45
+    labelsize: 15
+    ticklabelsize: 12
+    annotation_size: 12
+    colormap: "Blues"
+  models:
+    gpt4: "GPT-4"
+    gemini: "Gemini-1.5Pro"
+    mistral: "MISTRAL-v0.2"

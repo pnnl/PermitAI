@@ -1,0 +1,53 @@
+spec:
+  inputs:
+    tags:
+      description: "Tags needed to run jobs"
+      type: array
+      default:
+        - aws
+        - spot
+        - ec2
+        - policyai
+    stage:
+      description: "Stage for the job"
+      type: string
+      default: .pre
+    image:
+      default: ubuntu:22.04
+      type: string
+      description: "The container you want to use for the job"
+    name:
+      default: "Container Build"
+      type: string
+      description: "The name for the job"
+    GIT_STRATEGY:
+      default: fetch
+      type: string
+      options:
+        - clone
+        - fetch
+        - none
+      description: "https://docs.gitlab.com/ee/ci/runners/configure_runners.html#git-strategy"
+    GIT_SUBMODULE_STRATEGY:
+      default: none
+      type: string
+      options:
+        - none
+        - normal
+        - recursive
+      description: "https://docs.gitlab.com/ee/ci/runners/configure_runners.html#git-submodule-strategy"
+---
+"$[[ inputs.name ]]":
+  tags: $[[ inputs.tags ]]
+  stage: $[[ inputs.stage ]]
+  image: $[[ inputs.image]]
+  variables:
+    GIT_SUBMODULE_STRATEGY: $[[ inputs.GIT_SUBMODULE_STRATEGY ]]
+    GIT_STRATEGY: $[[ inputs.GIT_STRATEGY ]]
+  script:
+    - echo "Hello World"
+    - cat /etc/os-release
+    - whoami
+    - ls -al
+    - pwd
+    - exit 0

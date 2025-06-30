@@ -1,0 +1,43 @@
+# Default rules that are overriden per-job
+workflow:
+  # Aim is to only run if source is an open merge request or a branch push
+  rules:
+    - &run_on_mr
+      if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+    - &deduplicate_branch
+      if: "$CI_COMMIT_BRANCH && $CI_OPEN_MERGE_REQUESTS"
+      when: never
+    - &run_on_branch
+      if: "$CI_COMMIT_BRANCH"
+
+.ec2_cpu_spot_tags:
+  tags: &ec2_cpu_spot_tags
+    - aws
+    - spot
+    - ec2
+    - policyai
+
+variables:
+  IMAGE_TAG: evaluation-v0.1.0
+
+stages:
+  - build
+  - test
+
+include:
+  - component: devops.pnnl.gov/policyai/cloud-automation/gitlab-components/k8s-container-build@v0.2.7
+    inputs:
+      job-name: "Container build"
+      stage: build
+      tags: *ec2_cpu_spot_tags
+      CONTAINER_TAG: $IMAGE_TAG
+      DOCKERFILE: Dockerfile
+      rules-config:
+        - *run_on_mr
+        - *deduplicate_branch
+        - *run_on_branch
+  - local: ".gitlab/test.yml"
+    inputs:
+      image: $CI_REGISTRY_IMAGE:$IMAGE_TAG
+      stage: test
+      tags: *ec2_cpu_spot_tags

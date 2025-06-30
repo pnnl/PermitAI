@@ -1,0 +1,32 @@
+model:
+  provider: HuggingFace
+  name: /path/to/local/model   # need to provide the correct model path
+  max_tokens: 100000
+
+benchmark:
+  questions_csv: 'input/questions.csv'
+  question_types:
+    - closed
+    - evaluation
+  
+rag_eval:
+  docID_csv: 'input/metadata.csv'
+  path_chromadb: input/database/
+  chroma_name: eis
+
+pdf_eval:
+  path_JSON_chunks: 'input/json/'
+
+evaluation:
+  context: gold
+  prompt_file: 'input/prompts/with_context.txt'
+  max_attempts: 10
+  continue_previous: true
+  metrics:
+    - answer_correctness
+  RAGAS_batch_size: 4
+  EMBED_model: BAAI/bge-small-en-v1.5
+
+output:
+  directory: 'results/model_local/'
+  logfile: 'logs/application_local.log'

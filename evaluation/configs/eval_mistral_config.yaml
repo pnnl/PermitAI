@@ -1,0 +1,35 @@
+model:
+  provider: AWS
+  name: mistral.mistral-7b-instruct-v0:2
+  max_tokens: 20000
+  aws_role_use: false
+  aws_session_duration: 900
+
+
+benchmark:
+  questions_csv: 'input/questions.csv'
+  question_types:
+    - closed
+    - evaluation
+  
+rag_eval:
+  docID_csv: 'input/metadata.csv'
+  path_chromadb: input/database/
+  chroma_name: eis
+
+pdf_eval:
+  path_JSON_chunks: 'input/json/'
+
+evaluation:
+  context: gold
+  prompt_file: 'input/prompts/with_context.txt'
+  max_attempts: 10
+  continue_previous: true
+  metrics:
+    - answer_correctness
+  RAGAS_batch_size: 4
+  EMBED_model: BAAI/bge-small-en-v1.5
+
+output:
+  directory: 'results/model_mistral/'
+  logfile: 'logs/application_mistral.log'
