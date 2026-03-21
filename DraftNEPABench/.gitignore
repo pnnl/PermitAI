@@ -1,0 +1,52 @@
+### Python cache and tooling
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+.tox/
+
+### Build artifacts
+build/
+dist/
+*.egg-info/
+
+### Environments
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+.python-version
+
+### IDE/editor
+.DS_Store
+.idea/
+.vscode/
+
+
+run-and-grade/tasks/*
+
+### Project-specific generated outputs
+# Grading results and generated reports/images
+run-and-grade/**/workdir/out/
+run-and-grade/**/workdir/text/
+
+run-and-grade/**/workdir/references/*
+!run-and-grade/**/workdir/references/.gitkeep
+
+run-and-grade/evaluation-documents/*
+run-and-grade/evaluation-documents/.gitkeep
+
+run-and-grade/results/*
+run-and-grade/results/.gitkeep
+
+vertexai_creds.json
+logs.log
+
