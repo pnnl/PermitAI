@@ -344,7 +344,7 @@ reflect those of the United States Government or any agency thereof.
                     under Contract DE-AC05-76RL01830
 
 ## LICENSE
-Copyright Battelle Memorial Institute 2025
+Copyright Battelle Memorial Institute 2026
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:
