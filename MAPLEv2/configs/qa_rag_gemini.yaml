@@ -1,0 +1,42 @@
+model:
+  provider: Vertex
+  name: gemini-2.5-pro
+  max_tokens: 100000
+
+task: question_answer
+
+nepabench_directory: ./nepabench
+
+benchmark:
+  input_file: 'nepaquad/benchmark.json'
+  field_mapping:
+    question: question
+    answer: answer
+    file_name: file_name
+    chunks_json: json_file
+    context: context
+    question_type: question_type 
+  question_types:
+    - closed
+    - evaluation
+  
+evaluation:
+  prompt_file: 'prompts/with_context.txt'
+  continue_previous: true
+  eval_kwargs:
+    context_type: rag
+    max_attempts: 10
+    doc_id_csv_path: 'nepaquad/dataset/metadata.csv'
+    chromadb_path: nepaquad/dataset/database/
+    embed_model_name: 'all-MiniLM-L6-v2'
+
+scoring:
+  batch_size: 4
+  embed_model_name: 'all-MiniLM-L6-v2'
+  metrics:
+    - answer_correctness
+    - answer_similarity
+
+output:
+  directory: 'results/nepabench_tests/qa_rag_gemini/'
+  logfile: 'logs/nepabench_tests/qa_rag_gemini.log'

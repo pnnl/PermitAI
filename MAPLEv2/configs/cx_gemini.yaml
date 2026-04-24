@@ -1,0 +1,33 @@
+model:
+  provider: Vertex
+  name: gemini-2.5-pro
+  max_tokens: 100000
+
+task: information_extraction
+
+nepabench_directory: ./nepabench
+
+benchmark:
+  input_file: CXBench/benchmark.json
+  field_mapping:
+    file_name: file_name
+    field_type: type
+    chunks_json: json_file
+    entry_id: entry_id
+    field_name: field
+    description: description
+    answer: answer
+
+evaluation:
+  prompt_file: 'prompts/cxie_prompt.txt'
+  continue_previous: true
+  eval_kwargs:
+    max_attempts: 10
+    retry_delay: 30
+
+scoring:
+  metrics_config: "metrics/cx_metrics.json"
+
+output:
+  directory: 'results/nepabench_tests/cx_gemini/'
+  logfile: 'logs/nepabench_tests/cx_ie_gemini.log'

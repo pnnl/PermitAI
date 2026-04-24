@@ -1,0 +1,37 @@
+model:
+  provider: Vertex
+  name: gemini-2.5-pro
+  max_tokens: 100000
+
+task: comment_delineation
+
+nepabench_directory: ./nepabench
+
+benchmark:
+  input_file: CommentDelineate/benchmark.json
+  field_mapping:
+    comment_quotes: quotes
+    comment_file: comment_text
+
+evaluation:
+  prompt_file: 'prompts/comment_delineate.txt'
+  continue_previous: true
+  eval_kwargs:
+    max_attempts: 10
+    retry_delay: 10
+
+scoring:
+  metrics: 
+    soft_precision:
+      embedding_model: "all-MiniLM-L6-v2"
+      use_abbreviation_matching: true
+    soft_recall:
+      embedding_model: "all-MiniLM-L6-v2"
+      use_abbreviation_matching: true
+    soft_f1:
+      embedding_model: "all-MiniLM-L6-v2"
+      use_abbreviation_matching: true
+
+output:
+  directory: 'results/nepabench_tests/delineate_gemini/'
+  logfile: 'logs/nepabench_tests/delineate_gemini.log'

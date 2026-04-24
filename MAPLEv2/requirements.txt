@@ -1,0 +1,51 @@
+# Azure
+llama-index-llms-azure-openai
+langchain-openai
+openai
+
+# Vertex
+llama-index-llms-vertex
+llama-index-llms-google-genai
+google-genai
+google-cloud-storage
+
+# Bedrock
+llama-index-llms-bedrock
+boto3
+instructor
+
+# Huggingface
+transformers
+torch
+peft
+
+# PDF and image utilities
+chromadb
+llama-index-vector-stores-chroma
+pysqlite3-binary; platform_system != "Windows"
+pymupdf
+pillow
+tiktoken
+
+# Metrics
+datasets
+geopy
+langchain-huggingface
+nltk
+ragas
+rapidfuzz
+scikit-learn
+sentence-transformers
+tenacity
+matplotlib
+seaborn
+
+# Utilities
+omegaconf
+numpy
+scipy
+pandas
+pydantic
+python-dateutil
+python-dotenv
+tqdm

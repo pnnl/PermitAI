@@ -1,3 +1,11 @@
+> ⚠️ **DEPRECATED** 
+
+This tool is now deprecated. You should use **[MAPLEv2](https://github.com/pnnl/PermitAI/tree/master/MAPLEv2)** for all future evaluations, including for NEPABench. This repository is no longer maintained and is kept for archival purposes only.
+
+> ⚠️ **DEPRECATED** 
+
+---
+
 # Multi-context Assessment Pipeline for Language model Evaluation (MAPLE) v1.0
 
 This project provides a framework for evaluating language models, particularly in the context of question answering and document retrieval tasks. It includes components for handling various LLM providers, data loading, response generation, and evaluation using RAGAS metrics. It also supports multiple context-types and multiple benchmark datasets.

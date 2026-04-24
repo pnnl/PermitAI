@@ -1,0 +1,38 @@
+model:
+  provider: Vertex
+  name: gemini-2.5-pro
+  max_tokens: 100000
+
+task: tribe_extraction
+
+nepabench_directory: ./nepabench
+
+benchmark:
+  input_file: TribeBench/benchmark.json
+  field_mapping:
+    file_name: file_name
+    source_type: source_type
+    source_caption: source_caption
+    tribes: tribes
+
+evaluation:
+  prompt_file: 'prompts/tribe_extract.txt'
+  continue_previous: false
+  eval_kwargs:
+    max_attempts: 10
+
+scoring:
+  metrics: 
+    soft_precision:
+      embedding_model: "all-MiniLM-L6-v2"
+      use_abbreviation_matching: true
+    soft_recall:
+      embedding_model: "all-MiniLM-L6-v2"
+      use_abbreviation_matching: true
+    soft_f1:
+      embedding_model: "all-MiniLM-L6-v2"
+      use_abbreviation_matching: true
+
+output:
+  directory: 'results/nepabench_tests/tribe_gemini/'
+  logfile: 'logs/nepabench_tests/tribe_gemini.log'

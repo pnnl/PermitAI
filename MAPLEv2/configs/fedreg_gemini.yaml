@@ -1,0 +1,26 @@
+model:
+  provider: Vertex
+  name: gemini-2.5-pro
+  max_tokens: 100000
+
+task: structured_extraction
+
+nepabench_directory: ./nepabench
+
+benchmark:
+  input_file: FedRegBench/benchmark.json
+  field_mapping:
+    text: text
+    info: info
+    schema_json: schema_json
+
+evaluation:
+  prompt_file: 'prompts/sie_prompt.txt'
+  continue_previous: true
+  eval_kwargs:
+    max_attempts: 10
+    retry_delay: 30
+
+output:
+  directory: 'results/nepabench_tests/fedreg_gemini/'
+  logfile: 'logs/nepabench_tests/fedreg_gemini.log'
