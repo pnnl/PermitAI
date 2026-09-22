@@ -164,7 +164,7 @@ tzdata==2025.2
 urllib3==1.26.20
 vertexai==1.71.1
 wcwidth==0.2.14
-weasyprint==66.0
+weasyprint==70.0
 webencodings==0.5.1
 websocket-client==1.9.0
 websockets==15.0.1
