@@ -1,5 +1,5 @@
 annotated-types==0.7.0
-anyio==4.10.0
+anyio==4.14.2
 asttokens==3.0.0
 async-timeout==4.0.3
 attrs==25.4.0
