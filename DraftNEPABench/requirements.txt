@@ -117,7 +117,7 @@ Pygments==2.19.2
 PyMuPDF==1.26.5
 pypandoc==1.16
 pyparsing==3.2.3
-pypdf==3.17.4
+pypdf==6.19.0
 PyPDF2==3.0.1
 pypdfium2==5.0.0
 pyphen==0.17.2
