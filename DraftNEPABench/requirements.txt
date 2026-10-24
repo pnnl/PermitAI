@@ -96,7 +96,7 @@ pdf2txt==0.7.14
 pdfminer.six==20250506
 pexpect==4.9.0
 pikepdf==9.11.0
-pillow==11.3.0
+pillow==13.0.0
 pingouin==0.5.5
 platformdirs==4.4.0
 plotly==6.5.0
