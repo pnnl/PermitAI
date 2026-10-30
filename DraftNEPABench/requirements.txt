@@ -10,7 +10,7 @@ brotli==1.2.0
 cachetools==6.2.0
 camelot-py==1.0.9
 census==0.8.24
-certifi==2025.8.3
+certifi==2026.10.18
 cffi==1.17.1
 chardet==5.2.0
 charset-normalizer==3.4.3
