@@ -1,0 +1,45 @@
+# Credentials & secrets
+secrets/
+*.json
+!pyproject.toml
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Data & pipeline outputs
+*.pq
+*.parquet
+*.pkl
+*.pickle
+*.jsonl
+*.csv
+
+# Plots & figures
+*.png
+*.pdf
+*.html
+
+# IDE
+.vscode/settings.json
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

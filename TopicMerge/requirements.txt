@@ -1,0 +1,9 @@
+dspy
+google-genai
+numpy
+pacmap
+pandas
+pydantic
+scikit-learn
+scipy
+tqdm
