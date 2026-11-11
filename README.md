@@ -5,6 +5,7 @@ This GitHub repo contains works under the PermitAI project that have been approv
 1. **[/MAPLEv2](https://github.com/pnnl/PermitAI/tree/master/MAPLEv2):** Multi-context Assessment Pipeline for Language model Evaluation (MAPLE) v2.0 *(Use this for NEPABench evaluation)*
 2. **[/DraftNEPABench](https://github.com/pnnl/PermitAI/tree/master/DraftNEPABench):** DraftNEPABench: A Benchmark for Drafting NEPA Document Sections with Coding Agents
 3. **[/MAPLEv1](https://github.com/pnnl/PermitAI/tree/master/MAPLEv1):** Multi-context Assessment Pipeline for Language model Evaluation (MAPLE) v1.0
+4. **[/TopicMerge](https://github.com/pnnl/PermitAI/tree/master/TopicMerge):** TopicMerge: A Divide and Conquer Approach to Topic Modeling
 
 
 ## About PermitAI
